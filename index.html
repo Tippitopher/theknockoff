@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Knockoff — The Weekly Newsletter for Australian Tradies</title>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700;1,900&family=Barlow:wght@400;500;600;700&family=Roboto+Slab:wght@400;500;700&display=swap" rel="stylesheet">
+<script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="3e5998da-1bae-45e8-b692-1849a379c1e7"></script>
 <style>
   :root {
     --amber: #e8a020;
@@ -880,15 +881,12 @@
       </div>
     </div>
 
+    <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="3e5998da-1bae-45e8-b692-1849a379c1e7"></script>
+
     <p class="hero-tagline">
       The weekly newsletter <strong>built for Australian tradies.</strong>
       No PR fluff. No industry body spin. Just the stuff that actually affects your work, your money and your rights — every Friday when you're packing up.
     </p>
-
-    <div class="cta-block">
-      <a href="#subscribe" style="display:inline-block;background:var(--amber);color:var(--charcoal);font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:18px;letter-spacing:0.05em;text-transform:uppercase;padding:16px 40px;text-decoration:none;margin-top:8px;">Get It Free →</a>
-      <p class="cta-reassurance">No spam. No selling your info. Unsubscribe any time. It's just a newsletter.</p>
-    </div>
 
   </div>
 </section>
@@ -1094,10 +1092,8 @@
     <p class="bottom-cta-sub">Every Friday arvo. Straight to your inbox. Takes 30 seconds to sign up and zero dollars to subscribe — because tradies have enough people taking their money already.</p>
 
     <div class="cta-form" id="bottom-form" style="justify-content:center;">
-      <input type="email" id="bottom-email" placeholder="your@email.com.au" autocomplete="email">
-      <button type="button" onclick="submitBeehiiv('bottom-email','bottom-msg')">Get It Free →</button>
+      <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" style="display:inline-block;background:var(--amber);color:var(--charcoal);font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;letter-spacing:0.05em;text-transform:uppercase;padding:18px 48px;text-decoration:none;">Get It Free — Scroll Up →</a>
     </div>
-    <p id="bottom-msg" style="display:none;margin-top:10px;font-weight:700;color:var(--amber);font-family:'Barlow',sans-serif;font-size:14px;text-align:center;"></p>
     <p class="cta-reassurance" style="color:rgba(255,255,255,0.3);font-size:12px;margin-top:14px;">No spam. No ads disguised as content. Unsubscribe in one click.</p>
   </div>
 </section>
@@ -1116,18 +1112,5 @@
   <p class="footer-legal">© 2026 The Knockoff · theknockoff.com.au · Written by a tradie, for tradies<br>No industry body funding · No corporate ownership · Just Topher and a keyboard</p>
 </footer>
 
-<script>
-function submitBeehiiv(inputId, msgId) {
-  const email = document.getElementById(inputId).value.trim();
-  const msg = document.getElementById(msgId);
-  if (!email || !email.includes('@')) {
-    msg.style.display = 'block';
-    msg.style.color = '#c0320a';
-    msg.textContent = 'Please enter a valid email address.';
-    return;
-  }
-  window.location.href = 'https://theknockoff.beehiiv.com/subscribe?email=' + encodeURIComponent(email);
-}
-</script>
 </body>
 </html>
