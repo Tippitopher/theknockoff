@@ -880,8 +880,17 @@
       </div>
     </div>
 
-    <div style="width:100%;min-height:100px;margin:24px 0;">
-      <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="3e5998da-1bae-45e8-b692-1849a379c1e7"></script>
+    <div style="margin:28px 0 0 0;max-width:520px;">
+      <div style="display:flex;gap:0;width:100%;">
+        <input id="sub-email" type="email" placeholder="your@email.com.au" autocomplete="email"
+          style="flex:1;padding:16px 20px;font-size:16px;border:2px solid var(--amber);background:rgba(255,255,255,0.06);color:var(--white);font-family:'Barlow',sans-serif;outline:none;min-width:0;">
+        <button onclick="doSubscribe()" 
+          style="background:var(--amber);color:var(--charcoal);border:none;padding:16px 24px;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:17px;letter-spacing:0.05em;text-transform:uppercase;cursor:pointer;white-space:nowrap;">
+          Get It Free →
+        </button>
+      </div>
+      <p id="sub-msg" style="margin-top:10px;font-size:13px;font-family:'Barlow',sans-serif;min-height:18px;"></p>
+      <p style="margin-top:8px;font-size:11px;color:rgba(255,255,255,0.3);font-family:'Barlow',sans-serif;letter-spacing:0.05em;">🔒 No spam. No selling your info. Unsubscribe any time.</p>
     </div>
 
     <p class="hero-tagline">
@@ -1113,5 +1122,35 @@
   <p class="footer-legal">© 2026 The Knockoff · theknockoff.com.au · Written by a tradie, for tradies<br>No industry body funding · No corporate ownership · Just Topher and a keyboard</p>
 </footer>
 
+<script>
+function doSubscribe() {
+  var email = document.getElementById('sub-email').value.trim();
+  var msg = document.getElementById('sub-msg');
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    msg.style.color = '#c0320a';
+    msg.textContent = 'Please enter a valid email address.';
+    return;
+  }
+  msg.style.color = 'var(--amber)';
+  msg.textContent = 'Signing you up...';
+  var form = new FormData();
+  form.append('email', email);
+  fetch('https://theknockoff.beehiiv.com/subscribe', {
+    method: 'POST',
+    mode: 'no-cors',
+    body: form
+  }).then(function() {
+    msg.style.color = 'var(--amber)';
+    msg.textContent = "You're in! See you Friday arvo. 🔨";
+    document.getElementById('sub-email').value = '';
+  }).catch(function() {
+    msg.style.color = '#c0320a';
+    msg.textContent = 'Something went wrong — try again or email hello@theknockoff.com.au';
+  });
+}
+document.getElementById('sub-email').addEventListener('keypress', function(e) {
+  if (e.key === 'Enter') doSubscribe();
+});
+</script>
 </body>
 </html>
