@@ -855,7 +855,7 @@
     <a href="#whats-inside">What's Inside</a>
     <a href="#about">About Topher</a>
     <a href="#headlines">Recent Issues</a>
-    <a href="https://theknockoff.beehiiv.com/subscribe">Subscribe</a>
+    <a href="#subscribe">Subscribe</a>
   </nav>
 </header>
 
@@ -886,12 +886,7 @@
     </p>
 
     <div class="cta-block">
-      <span class="cta-label">Get it free every Friday arvo</span>
-      <div class="cta-form" id="hero-form">
-        <input type="email" id="hero-email" placeholder="your@email.com.au" autocomplete="email">
-        <button type="button" onclick="submitBeehiiv('hero-email','hero-msg')">Sign Me Up 🔨</button>
-      </div>
-      <p id="hero-msg" style="display:none;margin-top:10px;font-weight:700;color:var(--amber);font-family:'Barlow',sans-serif;font-size:14px;"></p>
+      <a href="#subscribe" style="display:inline-block;background:var(--amber);color:var(--charcoal);font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:18px;letter-spacing:0.05em;text-transform:uppercase;padding:16px 40px;text-decoration:none;margin-top:8px;">Get It Free →</a>
       <p class="cta-reassurance">No spam. No selling your info. Unsubscribe any time. It's just a newsletter.</p>
     </div>
 
@@ -1131,23 +1126,7 @@ function submitBeehiiv(inputId, msgId) {
     msg.textContent = 'Please enter a valid email address.';
     return;
   }
-  const formId = '3e5998da-1bae-45e8-b692-1849a379c1e7';
-  fetch('https://subscribe-forms.beehiiv.com/api/v1/subscription', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email: email, form_id: formId })
-  })
-  .then(r => {
-    msg.style.display = 'block';
-    msg.style.color = 'var(--amber)';
-    msg.textContent = "You're in! See you Friday arvo. 🔨";
-    document.getElementById(inputId).value = '';
-  })
-  .catch(() => {
-    msg.style.display = 'block';
-    msg.style.color = '#c0320a';
-    msg.textContent = 'Something went wrong. Try again or email hello@theknockoff.com.au';
-  });
+  window.location.href = 'https://theknockoff.beehiiv.com/subscribe?email=' + encodeURIComponent(email);
 }
 </script>
 </body>
