@@ -855,7 +855,7 @@
     <a href="#whats-inside">What's Inside</a>
     <a href="#about">About Topher</a>
     <a href="#headlines">Recent Issues</a>
-    <a href="#subscribe">Subscribe</a>
+    <a href="https://theknockoff.beehiiv.com/subscribe">Subscribe</a>
   </nav>
 </header>
 
@@ -880,23 +880,19 @@
       </div>
     </div>
 
-    <div style="margin:28px 0 0 0;max-width:520px;">
-      <div style="display:flex;gap:0;width:100%;">
-        <input id="sub-email" type="email" placeholder="your@email.com.au" autocomplete="email"
-          style="flex:1;padding:16px 20px;font-size:16px;border:2px solid var(--amber);background:rgba(255,255,255,0.06);color:var(--white);font-family:'Barlow',sans-serif;outline:none;min-width:0;">
-        <button onclick="doSubscribe()" 
-          style="background:var(--amber);color:var(--charcoal);border:none;padding:16px 24px;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:17px;letter-spacing:0.05em;text-transform:uppercase;cursor:pointer;white-space:nowrap;">
-          Get It Free →
-        </button>
-      </div>
-      <p id="sub-msg" style="margin-top:10px;font-size:13px;font-family:'Barlow',sans-serif;min-height:18px;"></p>
-      <p style="margin-top:8px;font-size:11px;color:rgba(255,255,255,0.3);font-family:'Barlow',sans-serif;letter-spacing:0.05em;">🔒 No spam. No selling your info. Unsubscribe any time.</p>
-    </div>
-
     <p class="hero-tagline">
       The weekly newsletter <strong>built for Australian tradies.</strong>
       No PR fluff. No industry body spin. Just the stuff that actually affects your work, your money and your rights — every Friday when you're packing up.
     </p>
+
+    <div class="cta-block">
+      <span class="cta-label">Get it free every Friday arvo</span>
+      <form class="cta-form" onsubmit="return false;">
+        <input type="email" placeholder="your@email.com.au" autocomplete="email">
+        <button type="submit">Sign Me Up 🔨</button>
+      </form>
+      <p class="cta-reassurance">No spam. No selling your info. Unsubscribe any time. It's just a newsletter.</p>
+    </div>
 
   </div>
 </section>
@@ -918,6 +914,18 @@
   <div class="stat-item">
     <span class="stat-num">31 yrs</span>
     <span class="stat-label">Topher's on-tools experience</span>
+  </div>
+</div>
+
+<!-- ── LATEST ISSUE STRIP ── -->
+<div style="position:relative;z-index:1;background:var(--charcoal);border-top:1px solid rgba(232,160,32,0.15);border-bottom:3px solid var(--amber);padding:28px 40px;">
+  <div style="max-width:860px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;">
+    <div>
+      <div style="font-family:'Barlow',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.32em;text-transform:uppercase;color:var(--amber);margin-bottom:8px;">🔨 Latest Issue — Out Now</div>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;color:var(--white);text-transform:uppercase;letter-spacing:-0.3px;line-height:1.2;">Issue #1 · Friday 29 May 2026</div>
+      <div style="font-family:'Roboto Slab',serif;font-size:13px;color:rgba(255,255,255,0.5);margin-top:6px;line-height:1.6;">Wage theft is now criminal · Diesel at $2.25/L · Super goes to 12% on 1 July · Why only 47% of apprentices finish</div>
+    </div>
+    <a href="https://theknockoff.beehiiv.com/subscribe" style="display:inline-block;background:var(--amber);color:var(--charcoal);font-family:'Barlow',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;padding:13px 28px;white-space:nowrap;">Read It Free →</a>
   </div>
 </div>
 
@@ -1029,13 +1037,13 @@
       <div class="tape-label">From the Editor</div>
       <div class="pull-quote">"Thirty-one years, a busted knee and more dodgy builders than I can count."</div>
 
-      <p>I started as a cabinet maker in the early nineties — kitchens, joinery, fit-outs, commercial work, the lot. I've worked for great operators and absolute shockers. I've been underpaid, underbid my own jobs, and once spent three hours building a client's pantry to measurements they'd given me in feet. I'm Australian. The pantry fit perfectly — in their garage.</p>
+      <p>I started as a cabinet maker in the early nineties — kitchens, joinery, fit-outs, commercial work, the lot. I've worked for great operators and absolute shockers. I've been underpaid, underbid my own jobs, and once installed an entire kitchen in the wrong unit of a new estate because the lot numbers made no sense and the boss said "find the number 4 and get it done." There were four identical units on Lot 4. I picked the first one. I was wrong. I found out three weeks later. I didn't get paid to fix it.</p>
 
       <p>I started The Knockoff because <strong>no one is talking to tradies like adults.</strong> The trade magazines are half ads and extreme sports. The union updates read like they were written by lawyers for other lawyers. And the industry bodies are so busy talking to government they've forgotten who they're supposed to represent.</p>
 
       <p>Every week I go through the Fair Work decisions, the ATO updates, the ASIC insolvency filings, the ACCC fuel reports, the builder news — and I tell you what matters and why, in the same language I'd use if I was explaining it at smoko. <strong>No spin. No filler. No agenda.</strong></p>
 
-      <p>Hanging up the boots was hard. Picking up the keyboard is easier on the knees. And it turns out retirement is just tools you're not allowed to use anymore.</p>
+      <p>Hanging up the boots was hard. Picking up the keyboard is easier on the knees.</p>
 
       <p style="color:var(--amber);font-weight:700;font-style:normal;">— Topher</p>
     </div>
@@ -1046,7 +1054,7 @@
 <!-- ── SAMPLE HEADLINES ── -->
 <section class="headlines-section" id="headlines">
   <div class="headlines-inner">
-    <div class="section-label">From Recent Issues</div>
+    <div class="section-label">From Issue #1</div>
     <h2 class="section-heading" style="margin-bottom:48px;">The Stuff We've<br>Been <em>Writing About</em></h2>
 
     <div class="headline-item">
@@ -1063,7 +1071,7 @@
 
     <div class="headline-item">
       <span class="headline-tag">Insolvencies</span>
-      <span class="headline-text">3,596 Australian Builders Collapsed Last Financial Year — How to Spot the Next One Before You're Chasing an Invoice From a Liquidator</span>
+      <span class="headline-text">Nearly 4,900 Australian Builders Collapsed Last Financial Year — How to Spot the Next One Before You're Chasing an Invoice From a Liquidator</span>
       <span class="headline-arrow">→</span>
     </div>
 
@@ -1101,9 +1109,10 @@
     <h2 class="bottom-cta-heading">Stop Missing<br>The <em>Knockoff</em></h2>
     <p class="bottom-cta-sub">Every Friday arvo. Straight to your inbox. Takes 30 seconds to sign up and zero dollars to subscribe — because tradies have enough people taking their money already.</p>
 
-    <div class="cta-form" id="bottom-form" style="justify-content:center;">
-      <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" style="display:inline-block;background:var(--amber);color:var(--charcoal);font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;letter-spacing:0.05em;text-transform:uppercase;padding:18px 48px;text-decoration:none;">Get It Free — Scroll Up →</a>
-    </div>
+    <form class="cta-form" onsubmit="return false;" style="justify-content:center;">
+      <input type="email" placeholder="your@email.com.au" autocomplete="email">
+      <button type="submit">Get It Free →</button>
+    </form>
     <p class="cta-reassurance" style="color:rgba(255,255,255,0.3);font-size:12px;margin-top:14px;">No spam. No ads disguised as content. Unsubscribe in one click.</p>
   </div>
 </section>
@@ -1113,43 +1122,13 @@
 <footer>
   <div class="footer-brand">The Knockoff</div>
   <div class="footer-links">
-    <a href="mailto:hello@theknockoff.com.au">Contact</a>
-    <a href="mailto:ads@theknockoff.com.au">Advertise</a>
-    <a href="mailto:tips@theknockoff.com.au">Submit a Tip</a>
-    <a href="mailto:jokes@theknockoff.com.au">Send a Joke</a>
-    <a href="mailto:stories@theknockoff.com.au">Tradie Stories</a>
+    <a href="mailto:hello@theknockoff.au">Contact</a>
+    <a href="mailto:tips@theknockoff.au">Submit a Tip</a>
+    <a href="mailto:jokes@theknockoff.au">Send a Joke</a>
+    <a href="mailto:stories@theknockoff.au">Tradie Stories</a>
   </div>
-  <p class="footer-legal">© 2026 The Knockoff · theknockoff.com.au · Written by a tradie, for tradies<br>No industry body funding · No corporate ownership · Just Topher and a keyboard</p>
+  <p class="footer-legal">© 2026 The Knockoff · theknockoff.au · Written by a tradie, for tradies<br>No industry body funding · No corporate ownership · Just Topher and a keyboard</p>
 </footer>
 
-<script>
-function doSubscribe() {
-  var email = document.getElementById('sub-email').value.trim();
-  var msg = document.getElementById('sub-msg');
-  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    msg.style.color = '#c0320a';
-    msg.textContent = 'Please enter a valid email address.';
-    return;
-  }
-  msg.style.color = 'var(--amber)';
-  msg.textContent = 'Signing you up...';
-  fetch('https://knockoff-subscribe.tippitopher.workers.dev/', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email: email })
-  }).then(function(r) { return r.json(); })
-  .then(function(data) {
-    msg.style.color = 'var(--amber)';
-    msg.textContent = "You're in! See you Friday arvo. 🔨";
-    document.getElementById('sub-email').value = '';
-  }).catch(function() {
-    msg.style.color = '#c0320a';
-    msg.textContent = 'Something went wrong — try again or email hello@theknockoff.com.au';
-  });
-}
-document.getElementById('sub-email').addEventListener('keypress', function(e) {
-  if (e.key === 'Enter') doSubscribe();
-});
-</script>
 </body>
 </html>
