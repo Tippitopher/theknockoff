@@ -887,10 +887,11 @@
 
     <div class="cta-block">
       <span class="cta-label">Get it free every Friday arvo</span>
-      <form class="cta-form" onsubmit="return false;">
-        <input type="email" placeholder="your@email.com.au" autocomplete="email">
-        <button type="submit">Sign Me Up 🔨</button>
+      <form class="cta-form" id="hero-form">
+        <input type="email" id="hero-email" placeholder="your@email.com.au" autocomplete="email" required>
+        <button type="submit" id="hero-btn">Sign Me Up 🔨</button>
       </form>
+      <p id="hero-msg" style="display:none;margin-top:14px;font-family:'Barlow',sans-serif;font-size:14px;font-weight:600;letter-spacing:0.02em;"></p>
       <p class="cta-reassurance">No spam. No selling your info. Unsubscribe any time. It's just a newsletter.</p>
 
       <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;">
@@ -1102,10 +1103,11 @@
     <h2 class="bottom-cta-heading">Stop Missing<br>The <em>Knockoff</em></h2>
     <p class="bottom-cta-sub">Every Friday arvo. Straight to your inbox. Takes 30 seconds to sign up and zero dollars to subscribe — because tradies have enough people taking their money already.</p>
 
-    <form class="cta-form" onsubmit="return false;" style="justify-content:center;">
-      <input type="email" placeholder="your@email.com.au" autocomplete="email">
-      <button type="submit">Get It Free →</button>
+    <form class="cta-form" id="bottom-form" style="justify-content:center;">
+      <input type="email" id="bottom-email" placeholder="your@email.com.au" autocomplete="email" required>
+      <button type="submit" id="bottom-btn">Get It Free →</button>
     </form>
+    <p id="bottom-msg" style="display:none;margin-top:14px;font-family:'Barlow',sans-serif;font-size:14px;font-weight:600;letter-spacing:0.02em;color:rgba(255,255,255,0.8);"></p>
     <p class="cta-reassurance" style="color:rgba(255,255,255,0.3);font-size:12px;margin-top:14px;">No spam. No ads disguised as content. Unsubscribe in one click.</p>
   </div>
 </section>
@@ -1124,5 +1126,51 @@
   <p class="footer-legal">© 2026 The Knockoff · theknockoff.au · Written by a tradie, for tradies<br>No industry body funding · No corporate ownership · Just Topher and a keyboard</p>
 </footer>
 
+
+<script>
+function knockoffSubscribe(emailId, btnId, msgId) {
+  var email = document.getElementById(emailId).value.trim();
+  var btn = document.getElementById(btnId);
+  var msg = document.getElementById(msgId);
+  if (!email) return;
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+  fetch('https://knockoff-subscribe.tippitopher.workers.dev', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: email, reactivate_existing: true, send_welcome_email: true })
+  })
+  .then(function(r) { return r.json(); })
+  .then(function(data) {
+    msg.style.display = 'block';
+    if (data.data || data.id || (data.status && data.status !== 'error')) {
+      msg.style.color = '#e8a020';
+      msg.textContent = "You\'re in. Welcome email is on its way. 🔨";
+      btn.textContent = 'Done ✓';
+    } else {
+      msg.style.color = '#e8a020';
+      msg.textContent = "Already subscribed — see you Friday arvo.";
+      btn.textContent = 'Done ✓';
+    }
+  })
+  .catch(function() {
+    msg.style.display = 'block';
+    msg.style.color = '#c0320a';
+    msg.textContent = 'Something went wrong. Try again or email hello@theknockoff.au';
+    btn.disabled = false;
+    btn.textContent = 'Sign Me Up 🔨';
+  });
+}
+
+document.getElementById('hero-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  knockoffSubscribe('hero-email', 'hero-btn', 'hero-msg');
+});
+
+document.getElementById('bottom-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  knockoffSubscribe('bottom-email', 'bottom-btn', 'bottom-msg');
+});
+</script>
 </body>
 </html>
